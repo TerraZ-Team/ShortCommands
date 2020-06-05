@@ -1,0 +1,13 @@
+G:\Github\ShortCommands\ShortCommands\obj\Debug\ShortCommands.csprojAssemblyReference.cache
+G:\Github\ShortCommands\ShortCommands\obj\Debug\ShortCommands.csproj.CoreCompileInputs.cache
+G:\Github\ShortCommands\ShortCommands\bin\Debug\ShortCommands.dll
+G:\Github\ShortCommands\ShortCommands\bin\Debug\ShortCommands.pdb
+G:\Github\ShortCommands\ShortCommands\bin\Debug\Newtonsoft.Json.dll
+G:\Github\ShortCommands\ShortCommands\bin\Debug\OTAPI.dll
+G:\Github\ShortCommands\ShortCommands\bin\Debug\TerrariaServer.exe
+G:\Github\ShortCommands\ShortCommands\bin\Debug\TShockAPI.dll
+G:\Github\ShortCommands\ShortCommands\bin\Debug\OTAPI.pdb
+G:\Github\ShortCommands\ShortCommands\bin\Debug\TerrariaServer.pdb
+G:\Github\ShortCommands\ShortCommands\obj\Debug\ShortCommands.csproj.CopyComplete
+G:\Github\ShortCommands\ShortCommands\obj\Debug\ShortCommands.dll
+G:\Github\ShortCommands\ShortCommands\obj\Debug\ShortCommands.pdb

@@ -134,7 +134,7 @@ namespace ShortCommands
                     string replacer3 = "{player}";
                     if (usecmd.Contains(replacer3))
                     {
-                        usecmd = usecmd.Replace(replacer3, args.Player.User.Name);
+                        usecmd = usecmd.Replace(replacer3, args.Player.Account.Name);
                     }
 
                     string replacer4 = "{website}";
