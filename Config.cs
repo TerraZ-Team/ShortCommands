@@ -1,15 +1,15 @@
-﻿﻿using Newtonsoft.Json;
+﻿﻿using System.Text.Json;
 using TShockAPI;
 
 namespace ShortCommands
 {
     static class Config
     {
-        class ConfigStruct
+        class ConfigSettings
         {
-            public Dictionary<string, string> shortcommands = new ();
+            public Dictionary<string, string> shortcommands { get; set; } = new();
 
-            public string website = "";
+            public string website { get; set; } = "";
         }
 
         public static Dictionary<string, string> shortcommands = new() {
@@ -26,7 +26,7 @@ namespace ShortCommands
 
         public static string website = "https://tshock.co/";
 
-        private static readonly string configPath = Path.Combine(TShock.SavePath, "ShortCommands.json");
+        private static readonly string _configFilePath = Path.Combine(TShock.SavePath, "ShortCommands.json");
 
         static Config()
         {
@@ -35,25 +35,27 @@ namespace ShortCommands
 
         private static void Save()
         {
-            File.WriteAllText(configPath, JsonConvert.SerializeObject(
-                new ConfigStruct() { shortcommands = shortcommands, website = website }, Formatting.Indented));
+            var jsonString = JsonSerializer.Serialize(new ConfigSettings() { shortcommands = shortcommands, website = website }
+            , new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_configFilePath, jsonString);
         }
 
         public static void Load()
         {
-            if (!File.Exists(configPath))
+            if (!File.Exists(_configFilePath))
             {
                 Save();
                 return;
             }
 
-            var config = JsonConvert.DeserializeObject<ConfigStruct>(File.ReadAllText(configPath));
-            if (config == null)
+            var jsonString = File.ReadAllText(_configFilePath);
+            var settings = JsonSerializer.Deserialize<ConfigSettings>(jsonString);
+            if (settings == null)
                 Save();
             else
             {
-                shortcommands = config.shortcommands;
-                website = config.website;
+                shortcommands = settings.shortcommands;
+                website = settings.website;
             }
 
         }
